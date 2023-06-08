@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build --tag $DOCKER_HUB_USER/$DOCKER_IMAGE_NAME:$GITHUB_RUN_NUMBER .
     - name: Login to Docker Hub
@@ -37,5 +37,4 @@ jobs:
           from_branch: release
           target_branch: main
           github_token: ${{ secrets.GITHUB_TOKEN  }}
-          # github_token: ${{ secrets.GITHUB_TOKEN }}
           # github_token: ${{ github.token }}

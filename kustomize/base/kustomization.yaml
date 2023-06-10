@@ -1,0 +1,21 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+
+commonLabels:
+  company: aforo255
+  tier: backend
+  owner: teamCOD
+
+commonAnnotations:
+  app: nodejs-microservices
+  author1: psharpx
+  author2: andydar
+
+nameSuffix: 
+  -v1
+
+configMapGenerator:
+  - name: app-security-configmap
+    files:
+      - .env=config.properties

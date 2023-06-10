@@ -1,0 +1,18 @@
+resources:
+  - ../../base
+
+commonLabels:
+  environment: production
+
+namePrefix: prod-
+
+patches:
+  - path: patch.yaml
+    target:
+      kind: ConfigMap
+  - path: memorylimit_patch.yaml
+    target:
+      kind: Deployment
+  - path: replicascount_patch.yaml
+    target:
+      kind: Deployment

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-security-deployment
+  labels:
+    app: app-security-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-security-service
+  template:
+    metadata:
+      labels:
+        app: app-security-service
+    spec:
+      containers:
+      - name: app-security
+        image: psharpx/aforo255-micro-security:latest
+        ports:
+        - containerPort: 5001
+        envFrom:
+        - configMapRef:
+            name: app-security-configmap

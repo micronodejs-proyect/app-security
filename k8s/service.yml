@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: app-service-security
+  name: app-security-service
 spec:
   type: ClusterIP
   selector:
-    app: service-security
+    app: app-security-service
   ports:
   - protocol: TCP
     port: 80

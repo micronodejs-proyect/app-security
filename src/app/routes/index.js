@@ -1,9 +1,6 @@
-const epxress = require('express')
-const router = epxress.Router()
-
-router.use('/', require('./home.routes'))
-router.use('/account', require('./account.routes'))
-
+const express = require('express')
+const router = express.Router()
+router.use('/auth', require('./auth.routes'))
 
 router.get('*', (req, res) => {
     res.status(404)

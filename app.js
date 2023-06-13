@@ -1,5 +1,5 @@
 
-require('dotenv').config()
+require('dotenv').config({ path: './environment/.env' })
 const express = require('express')
 const app = express()
 const appPromise = require('./src/app/middlewares/configprovider').appPromise
